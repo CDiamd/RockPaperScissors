@@ -1,4 +1,4 @@
-function getComputerChoice(weapon) {
+function getComputerChoice(arr) {
     const randIndex = Math.floor(Math.random() * weapon.length);
     console.log(randIndex);
     const item = weapon[randIndex];
