@@ -15,3 +15,9 @@ console.log(compChoice);
 //playerSelection & computerSelection.
 //RETURNS a string that declares the winner.
 //make playerSelection parameter case-insensitive.
+//*************T H O U G H T S**************************************
+//Use if-else statements to check comparisons on what item
+//beats what item.... 
+// if player===rock & comp !== rock \\ scissors then
+// comp is winner...
+
