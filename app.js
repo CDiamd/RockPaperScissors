@@ -10,29 +10,17 @@ const compChoice = getComputerChoice(weapon);
 console.log(compChoice);
 
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection == "Rock" && computerSelection == "Paper"){
-        return "You Lose! Paper beats Rock!";
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        return "You Win! Rock beats Scissors!";
-    } else {
-        return "CAT! Try Again!"
-    }
-    if(playerSelection == "Paper" && computerSelection == "Rock"){
-        return "You Win! Paper beats Rock!!";
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-        return "You Lose! Scissors beats Paper!";
-    } else {
-        return "CAT! Try Again!"
-    }
-    if(playerSelection == "Scissors" && computerSelection == "Rock"){
-        return "You Lose! Rock beats Scissors!";
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-        return "You Win! Scissors beats Paper!";
-    } else {
-        return "CAT! Try Again!"
-    }
+    if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
+        (playerSelection == "Paper" && computerSelection == "Rock") ||
+        (playerSelection == "Scissors" && computerSelection == "Paper")) {
+            return `You Win! ${playerSelection} beats ${computerSelection}!`;            
+        } else if (playerSelection == computerSelection) {
+            return "CAT! Try Again!";
+        } else {
+            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
+        }
 }
-let playerSelection = "Paper";
+let playerSelection = "Scissors";
 let computerSelection = compChoice;
 let results = playRound(playerSelection, computerSelection);
 console.log(results)
