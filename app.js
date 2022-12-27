@@ -6,26 +6,25 @@ function getComputerChoice() {
     return item;
 }
 
-//performs RPS checks 
+//performs RPS checks & sets score to 0.
 let youWin = "You Win!";
 let youLose = "You Lose!";
 let cat = "CAT! Try Again!";
 
 let pScore = 0
 let compScore = 0
-console.log(pScore);
-console.log(compScore);
+
 
 function playRound(playerSelection, computerSelection) {
     if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
         (playerSelection == "Paper" && computerSelection == "Rock") ||
         (playerSelection == "Scissors" && computerSelection == "Paper")) {
-            pScore++;
-            return (youWin + ` ${playerSelection} beats ${computerSelection}!`);       
+            pScore++
+            return youWin + ` ${playerSelection} beats ${computerSelection}!`;       
         } else if (playerSelection == computerSelection) {
             return (cat);
         } else {
-            compScore++;
+            compScore++
             return (youLose + ` ${computerSelection} beats ${playerSelection}!`);
         }
 }
@@ -37,7 +36,6 @@ function pInput() {
 }
 
 //Runs getCompChoice and RPS checks and prints them 5 times and checks/updates score.
-
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = pInput();
@@ -46,12 +44,11 @@ function game() {
         let result = playRound(playerSelection, computerSelection);
         console.log(compChoice);
         console.log(result);
+        console.log(pScore);
+        console.log(compScore);
     }
 }
 
 game();
 
 
-
-
-//if/else to update scores depending who wins
